@@ -1,0 +1,68 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "globalDependencies": [".env", ".env.test", ".env.local"],
+  "tasks": {
+    "compile": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**/*"],
+      "outputs": ["dist/**"]
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "inputs": ["src/**/*"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"],
+      "env": [
+        "AUTH_SECRET",
+        "SUPABASE_SERVICE_ROLE_KEY",
+        "QSTASH_URL",
+        "QSTASH_TOKEN",
+        "QSTASH_CURRENT_SIGNING_KEY",
+        "QSTASH_NEXT_SIGNING_KEY",
+        "APP_URL",
+        "DB_WEBHOOKS_CHECKSUM",
+        "KV_URL",
+        "KV_REST_API_URL",
+        "KV_REST_API_TOKEN",
+        "KV_REST_API_READ_ONLY_TOKEN",
+        "CRON_AUTH_SECRET",
+        "ANALYTICS_BACKFILL_TOKEN",
+        "NEXT_PUBLIC_VERCEL_ENV"
+      ]
+    },
+    "test": {
+      "dependsOn": ["^build", "compile"],
+      "inputs": ["src/**/*.test.tsx", "src/**/*.test.ts"]
+    },
+    "test:all": {
+      "dependsOn": ["^build", "compile"],
+      "inputs": ["src/**/*.test.tsx", "src/**/*.test.ts"]
+    },
+    "test:e2e": {
+      "dependsOn": ["^build", "compile"],
+      "inputs": ["src/**/*.spec.ts"]
+    },
+    "test:ci": {
+      "dependsOn": ["^build", "compile"],
+      "inputs": ["src/**/*.test.tsx", "src/**/*.test.ts"]
+    },
+    "check-types": {
+      "dependsOn": ["^build", "compile"],
+      "inputs": ["src/**/*"]
+    },
+    "lint": {
+      "dependsOn": ["^build"]
+    },
+    "format": {
+      "dependsOn": ["^build"]
+    },
+    "check-format": {
+      "dependsOn": ["^build"]
+    },
+    "validate": {
+      "dependsOn": ["^build"]
+    },
+    "validate:ci": {
+      "dependsOn": ["^build"]
+    }
+  }
+}

@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 271.5 0% 100%;
+    --background-2: 0 0% 97%;
+    --foreground: 271.5 0% 10%;
+    --card: 271.5 0% 100%;
+    --card-foreground: 271.5 0% 15%;
+    --popover: 271.5 0% 100%;
+    --popover-foreground: 271.5 95% 10%;
+    --primary: 271.5 81.3% 55.9%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 271.5 10% 90%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 233.5 10% 95%;
+    --muted-foreground: 271.5 0% 40%;
+    --accent: 233.5 10% 90%;
+    --accent-foreground: 271.5 0% 15%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 271.5 81.3% 55.9%;
+    --radius: 0.5rem;
+    /* GANTT */
+    --gantt-behavior: 270 30% 60%;
+    --gantt-coupons: 270 30% 80%;
+    --gantt-inactive: 0 0% 80% / 0.5;
+    /* CHARTS */
+    --chart-1: 271.5 74% 66%;
+    --chart-2: 220 76% 61%;
+    --chart-3: 160 58% 60%;
+    --chart-4: 30 37% 24%;
+    --chart-5: 340 87% 67%;
+  }
+
+  .dark {
+    --background: 270 50% 5%;
+    --background-2: 270 20% 10%;
+    --foreground: 270 5% 90%;
+    --card: 270 50% 0%;
+    --card-foreground: 270 5% 90%;
+    --popover: 270 50% 5%;
+    --popover-foreground: 270 5% 90%;
+    --primary: 270 95.2% 75.3%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 270 70% 5%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 232 30% 15%;
+    --muted-foreground: 270 5% 60%;
+    --accent: 270 15% 20%;
+    --accent-foreground: 270 5% 90%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 270 32.6% 17.5%;
+    --input: 270 20% 17.5%;
+    --ring: 271.5 81.3% 55.9%;
+    /* GANTT */
+    --gantt-behavior: 270 40% 10%;
+    --gantt-coupons: 270 40% 20%;
+    --gantt-inactive: 0 0% 20% / 0.5;
+    /* CHARTS */
+    --chart-1: 270 65% 60%;
+    --chart-2: 220 70% 50%;
+    --chart-3: 160 60% 45%;
+    --chart-4: 30 80% 55%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  :root {
+    --pad: 8px;
+    --aside-width: 256px;
+    --navbar-height: 4rem;
+    --nav-height: 3.75rem;
+    --form-actions-height: 4.5rem;
+    --table-height: calc(100dvh - 240px);
+    --table-filters-height: calc(var(--table-height) - 48px);
+  }
+
+  @media all and (min-width: 640px) {
+    :root {
+      --pad: 16px;
+    }
+  }
+
+  html,
+  body {
+    @apply h-full overflow-hidden;
+  }
+
+  ::-webkit-scrollbar {
+    @apply h-1 w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-foreground rounded;
+  }
+}
+
+@layer utilities {
+  .layout {
+    @apply grid-cols-page grid auto-rows-max;
+  }
+
+  .layout-content {
+    @apply col-content;
+  }
+
+  .layout-bleed {
+    @apply col-bleed;
+  }
+
+  .layout-form-page {
+    @apply grid-cols-page relative grid grid-rows-[calc(100dvh-var(--navbar-height)-var(--form-actions-height))_var(--form-actions-height)];
+  }
+
+  .layout-tabs-form-page {
+    @apply grid-cols-page relative grid grid-rows-[calc(100dvh-var(--navbar-height)-var(--nav-height)-var(--form-actions-height))_var(--form-actions-height)];
+  }
+
+  .layout-secondary-form-page {
+    @apply grid-cols-page relative grid grid-rows-[calc(100dvh-var(--navbar-height)-var(--form-actions-height))_var(--form-actions-height)];
+  }
+
+  .layout-form-page-content {
+    @apply col-bleed h-full overflow-auto;
+  }
+
+  .form-page {
+    @apply relative grid grid-cols-[1fr,240px] gap-6 py-8;
+  }
+
+  .form-page-aside {
+    @apply absolute inset-0 col-start-2 py-[inherit];
+  }
+
+  .h1 {
+    @apply scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl;
+  }
+
+  .h2 {
+    @apply scroll-m-20 pb-2 text-3xl font-semibold tracking-tight transition-colors first:mt-0;
+  }
+
+  .h3 {
+    @apply scroll-m-20 text-2xl font-semibold tracking-tight;
+  }
+
+  .h4 {
+    @apply scroll-m-20 text-xl font-semibold tracking-tight;
+  }
+
+  .p {
+    @apply leading-7 [&:not(:first-child)]:mt-6;
+  }
+
+  .lead {
+    @apply text-muted-foreground text-xl;
+  }
+
+  .large {
+    @apply text-lg font-semibold;
+  }
+
+  .small {
+    @apply text-sm font-medium leading-none;
+  }
+
+  .muted {
+    @apply text-muted-foreground text-sm;
+  }
+}
+
+.monaco-editor {
+  --vscode-editor-background: hsl(222.2 84% 4.9%) !important;
+  --vscode-editorGutter-background: hsl(222.2 84% 4.9%) !important;
+}
+
+.minimap {
+  display: none;
+}
+
+/* Calendar input https://gist.github.com/mjbalcueva/1fbcb1be9ef68a82c14d778b686a04fa */
+.rdp-vhidden {
+  @apply hidden;
+}
