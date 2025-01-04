@@ -3,7 +3,7 @@ import json from "@rollup/plugin-json";
 import esbuild from "rollup-plugin-esbuild";
 import dts from "rollup-plugin-dts";
 
-import globalPackageJSON from "./package.json" assert { type: "json" };
+import globalPackageJSON from "./package.json" with { type: "json" };
 
 export const dist = "dist/bundle";
 
