@@ -20,7 +20,7 @@ const MoreInfoTooltip = (props: Props) => {
         </TooltipTrigger>
         <TooltipContent
           side="right"
-          className="text-foreground flex max-w-[320px] flex-col gap-1 px-4 py-2 font-normal"
+          className="bg-primary flex max-w-[320px] flex-col gap-1 px-4 py-2 font-normal text-black"
         >
           {children}
         </TooltipContent>

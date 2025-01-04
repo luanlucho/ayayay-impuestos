@@ -92,7 +92,7 @@ const CalculatorForm = (props: Props) => {
         noValidate
         id="form-calculator"
         className={twMerge(
-          "CalculatorForm flex max-w-[720px] flex-col gap-4",
+          "CalculatorForm flex max-w-[720px] flex-col gap-4 [&_*]:!text-sm",
           className
         )}
         onSubmit={handleSubmit(submitHandler, console.error)}

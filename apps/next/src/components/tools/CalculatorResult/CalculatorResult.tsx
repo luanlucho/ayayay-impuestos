@@ -21,8 +21,10 @@ const CalculatorResult = (props: Props) => {
             <li
               key={index}
               className={twMerge(
-                "grid w-full grid-cols-[1fr,max-content] grid-rows-subgrid items-center justify-between rounded border px-2 py-1",
-                isPrimary ? "border-primary" : ""
+                "grid w-full grid-cols-[1fr,max-content] grid-rows-subgrid items-center justify-between rounded-xl border px-2 py-1 text-sm",
+                isPrimary
+                  ? "dark:border-primary bg-primary dark:bg-transparent"
+                  : ""
               )}
             >
               <span className="flex items-center gap-1">
@@ -30,7 +32,7 @@ const CalculatorResult = (props: Props) => {
                   className={twMerge(
                     "text-muted-foreground",
                     isSecondary ? "text-foreground" : "",
-                    isPrimary ? "text-primary" : ""
+                    isPrimary ? "text-foreground dark:text-primary" : ""
                   )}
                 >
                   {label}
@@ -41,7 +43,7 @@ const CalculatorResult = (props: Props) => {
                 className={twMerge(
                   "text-muted-foreground min-w-[80px]",
                   isSecondary ? "text-foreground" : "",
-                  isPrimary ? "text-primary" : ""
+                  isPrimary ? "text-foreground dark:text-primary" : ""
                 )}
               >
                 {typeof value === "number" ? (
