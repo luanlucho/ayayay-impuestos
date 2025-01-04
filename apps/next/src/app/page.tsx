@@ -15,19 +15,19 @@ const HomePage = async (props: Props) => {
       <Navbar className="" />
       <div className="layout">
         <div className="layout-content py-8">
-          <PageHeader title="Calcula tus impuestos gratis" />
+          <PageHeader title="Calcula tus impuestos ecuatorianos gratis" />
           <p className="text-lg">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-            consequatur vero sit perferendis nihil qui.
+            Calcula tus impuestos de forma rápida y sencilla. Esta es la forma
+            más fácil de calcular tus impuestos en Ecuador.
           </p>
-          <div className="my-8 flex items-center justify-center rounded-lg bg-neutral-200 px-32 py-32">
+          <div className="my-8 flex items-center justify-center rounded-lg bg-neutral-200 p-12 md:p-32">
             <Link href="/2024/calculadora-impuesto-a-la-renta">
-              <Button className="h-auto px-8 py-4 text-xl">
+              <Button className="h-auto px-4 py-2 text-lg md:px-8 md:py-4 md:text-xl">
                 Click aquí para calcular
               </Button>
             </Link>
           </div>
-          <div className="grid grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <CardItem
               icon={<ShieldCheck width={64} height={64} />}
               title="Segura"

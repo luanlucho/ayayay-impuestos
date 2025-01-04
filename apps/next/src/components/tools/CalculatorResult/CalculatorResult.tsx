@@ -11,7 +11,9 @@ const CalculatorResult = (props: Props) => {
   if (!data || data.length === 0) return null;
   return (
     <div className={twMerge("CalculatorResult flex flex-col gap-4", className)}>
-      <h2>Resultado</h2>
+      <h2 id="result" className="h2 !text-lg">
+        Resultado
+      </h2>
       <ul className="grid grid-cols-1 gap-2">
         {data.map((item, index) => {
           const { label, value, options, description } = item;

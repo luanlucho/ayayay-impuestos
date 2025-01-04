@@ -14,7 +14,7 @@ const FormDependentsSelect = <TSchema extends FieldValues>(
 
   return (
     <FormSelect
-      placeholder="Selecciona tu cuantas cargas familiares tienes"
+      placeholder="Número de cargas familiares"
       {...rest}
       className={twMerge(
         "FormDependentsSelect w-40 first-letter:capitalize",

@@ -9,7 +9,7 @@ const Footer = (props: Props) => {
   return (
     <footer
       className={twMerge(
-        "Footer layout w-full bg-yellow-400 px-32 py-2",
+        "Footer layout w-full bg-yellow-400 px-2 py-2 md:px-32",
         className
       )}
     >

@@ -1,6 +1,7 @@
 "use client";
 import { zodResolver } from "@hookform/resolvers/zod";
 import React, { useEffect, useState } from "react";
+import { flushSync } from "react-dom";
 import { SubmitHandler, useForm, useWatch } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 
@@ -83,7 +84,12 @@ const CalculatorForm = (props: Props) => {
       default:
         throw new Error(`Régimen no encontrado: ${values.regime}`);
     }
-    setResult(result);
+    flushSync(() => setResult(result));
+    const element = document.getElementById("result");
+    if (!element) return;
+    window.requestAnimationFrame(() => {
+      element.scrollIntoView({ behavior: "smooth" });
+    });
   };
 
   return (
@@ -92,7 +98,7 @@ const CalculatorForm = (props: Props) => {
         noValidate
         id="form-calculator"
         className={twMerge(
-          "CalculatorForm flex max-w-[720px] flex-col gap-4 [&_*]:!text-sm",
+          "CalculatorForm flex max-w-[720px] flex-col gap-2 md:gap-4 [&_*]:text-sm",
           className
         )}
         onSubmit={handleSubmit(submitHandler, console.error)}
@@ -169,7 +175,7 @@ const CalculatorForm = (props: Props) => {
         <Button type="submit" className="w-48 self-end">
           Calcular
         </Button>
-        <Separator />
+        <Separator className="mb-2 mt-8" />
         <CalculatorResult data={result} />
       </form>
     </Form>

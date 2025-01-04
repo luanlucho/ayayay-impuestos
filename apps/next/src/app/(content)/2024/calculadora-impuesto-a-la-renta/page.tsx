@@ -6,7 +6,7 @@ import CalculatorForm from "components/tools/CalculatorForm/CalculatorForm";
 
 const HomePage = async (props: Props) => {
   return (
-    <div className="HomePage layout h-full overflow-auto pb-16">
+    <div className="HomePage layout h-full overflow-auto pb-4">
       <div className="layout-content flex flex-col gap-8 py-[--pad]">
         <div className="flex flex-col gap-4">
           <PageHeader title="Impuesto a la renta" />
