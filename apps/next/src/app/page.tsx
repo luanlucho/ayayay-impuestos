@@ -2,6 +2,7 @@ import React from "react";
 
 import { PageProps as Props } from "app/types";
 import PageHeader from "components/global/PageHeader/PageHeader";
+import CalculatorForm from "components/tools/CalculatorForm/CalculatorForm";
 import { Separator } from "ui/separator";
 
 const HomePage = async (props: Props) => {
@@ -12,19 +13,7 @@ const HomePage = async (props: Props) => {
           <PageHeader title="Impuesto a la renta" />
         </div>
         <Separator className="my-4" />
-        <div>
-          <h3 className="h3">Campaigns</h3>
-          <p className="text-muted-foreground">
-            Create campaigns to unlock new ways to reward your customers
-          </p>
-        </div>
-        <Separator className="my-4" />
-        <div>
-          <h3 className="h3">Quick navigate</h3>
-          <p className="text-muted-foreground">
-            Find the most important links to navigate the app
-          </p>
-        </div>
+        <CalculatorForm />
       </div>
     </div>
   );

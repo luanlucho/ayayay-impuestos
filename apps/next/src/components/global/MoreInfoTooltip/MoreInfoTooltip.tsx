@@ -8,8 +8,9 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "ui/tooltip";
 const MoreInfoTooltip = (props: Props) => {
   const { className, children } = props;
 
+  if (!children) return null;
   return (
-    <div className={twMerge("MoreInfoTooltip", className)}>
+    <div className={twMerge("MoreInfoTooltip cursor-pointer", className)}>
       <Tooltip delayDuration={500}>
         <TooltipTrigger
           asChild

@@ -22,7 +22,8 @@ const FormSelect = <TSchema extends FieldValues>(props: Props<TSchema>) => {
       render={fieldProps => {
         const { field } = fieldProps;
         const { onChange, value } = field;
-        const selectedValue = value ? value : undefined;
+        let selectedValue: any = typeof value === "number" ? `${value}` : value;
+        selectedValue = selectedValue ? selectedValue : undefined;
         const changeHandler = (value: string) => {
           onValueChange?.(value);
           onChange(value);

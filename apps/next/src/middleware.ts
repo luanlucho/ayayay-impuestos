@@ -3,14 +3,14 @@ import { type NextRequest } from "next/server";
 import { commonMiddleware } from "app/middlewares/common.middleware";
 import { corsMiddleware } from "app/middlewares/cors.middleware";
 import { ratelimitMiddleware } from "app/middlewares/ratelimit.middleware";
-import { supabaseMiddleware } from "app/middlewares/supabase.middleware";
+// import { supabaseMiddleware } from "app/middlewares/supabase.middleware";
 import { runMiddlewares } from "app/middlewares/utils.middleware";
 
 import "config/env.config";
 
 export async function middleware(req: NextRequest) {
   const common = commonMiddleware(req);
-  const supabase = supabaseMiddleware(req);
+  // const supabase = supabaseMiddleware(req);
   const ratelimit = ratelimitMiddleware(req);
   const cors = corsMiddleware(req, { allowOrigin: "*" });
 
@@ -27,7 +27,7 @@ export async function middleware(req: NextRequest) {
   // Order of middlewares is important - first to last
   const middlewares = [
     common(),
-    supabase(),
+    // supabase(),
     ratelimit(rateLimitOptions),
     cors({ path: storefrontPath })
   ];
