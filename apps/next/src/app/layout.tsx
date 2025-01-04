@@ -1,3 +1,4 @@
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { cookies } from "next/headers";
 
 import { RootLayoutProps as Props } from "./types";
@@ -15,6 +16,7 @@ const RootLayout = async (props: Props) => {
       <body className="bg-background">
         <Providers cookies={cookiesList.getAll()}>{children}</Providers>
       </body>
+      <GoogleAnalytics gaId="G-3DH1FTGKPM" />
     </html>
   );
 };
