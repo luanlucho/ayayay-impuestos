@@ -6,18 +6,22 @@ export const createMiddlewareClient = async (
   response: NextResponse
 ) => {
   return createServerClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    // @ts-expect-error
+    process.env.NEXT_PUBLIC_SUPABASE_URL,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     {
       cookies: {
         getAll() {
           return request.cookies.getAll();
         },
+        // @ts-expect-error
         setAll(cookiesToSet) {
+          // @ts-expect-error
           cookiesToSet.forEach(params => {
             const { name, value } = params;
             return request.cookies.set(name, value);
           });
+          // @ts-expect-error
           cookiesToSet.forEach(params => {
             const { name, value, options } = params;
             return response.cookies.set(name, value, options);

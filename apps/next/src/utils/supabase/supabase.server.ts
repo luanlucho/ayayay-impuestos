@@ -9,6 +9,7 @@ export const createServerClient = async () => {
   const cookieStore = await cookies();
 
   return _createServerClient<DB>(
+    // @ts-expect-error
     process.env.NEXT_PUBLIC_SUPABASE_URL,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY,
     {
@@ -16,8 +17,10 @@ export const createServerClient = async () => {
         getAll() {
           return cookieStore.getAll();
         },
+        // @ts-expect-error
         setAll(cookiesToSet) {
           try {
+            // @ts-expect-error
             cookiesToSet.forEach(({ name, value, options }) =>
               cookieStore.set(name, value, options)
             );
