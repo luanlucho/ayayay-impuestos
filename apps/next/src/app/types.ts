@@ -4,9 +4,12 @@ export interface RootLayoutProps {
 
 export interface LayoutProps {
   children: React.ReactNode;
+  params: Promise<{ countryCode: string; year: string }>;
 }
 
-export interface PageProps {}
+export interface PageProps {
+  params: LayoutProps["params"];
+}
 
 export interface ErrorProps {
   error: Error & { digest?: string };
@@ -14,5 +17,5 @@ export interface ErrorProps {
 }
 
 export interface MetadataProps {
-  params: any;
+  params: LayoutProps["params"];
 }

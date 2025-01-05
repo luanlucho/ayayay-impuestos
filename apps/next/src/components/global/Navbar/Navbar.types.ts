@@ -3,4 +3,6 @@
 // Component Props
 export interface NavbarProps {
   className?: string;
+  countryCode: string;
+  year: string;
 }

@@ -6,6 +6,7 @@ import Navbar from "components/global/Navbar/Navbar";
 import { trpcServer } from "config/trpc.server.config";
 
 const DashboardLayout = async (props: Props) => {
+  const { countryCode, year } = await props.params;
   const { children } = props;
 
   const dehydratedState = trpcServer.dehydrate({
@@ -15,7 +16,7 @@ const DashboardLayout = async (props: Props) => {
   return (
     <Hydrate state={dehydratedState}>
       <div className="DashboardLayout grid h-full w-full grid-cols-[1fr] grid-rows-[max-content,1fr]">
-        <Navbar className="col-span-2" />
+        <Navbar className="col-span-2" countryCode={countryCode} year={year} />
         <main>{children}</main>
         <Footer className="col-span-2" />
       </div>

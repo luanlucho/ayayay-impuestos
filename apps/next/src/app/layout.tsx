@@ -1,7 +1,7 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Metadata } from "next";
 
-import { RootLayoutProps as Props } from "./types";
+import { MetadataProps, RootLayoutProps as Props } from "./types";
 import Providers from "components/global/Providers/Providers";
 import { buildMetadata } from "utils/seo.utils";
 
@@ -21,13 +21,19 @@ const RootLayout = async (props: Props) => {
   );
 };
 
-export const generateMetadata = async (): Promise<Metadata> => {
+export const generateMetadata = async (
+  props: MetadataProps
+): Promise<Metadata> => {
+  const { countryCode, year } = await props.params;
   const locale = "es";
-  const title =
-    "Consulta gratis tu impuesto a la renta en Ecuador  | Ayayay Impuestos";
-  const description =
-    "Consulta tu impuesto a la renta 2024 fácilmente con Ayayay Impuestos. Descubre cuánto debes pagar y mantente al día con tus declaraciones en el SRI";
-  return buildMetadata({ title, description, locale, path: "/" });
+  const title = `Consulta gratis tu impuesto a la renta en Ecuador  | Ayayay Impuestos`;
+  const description = `Consulta tu impuesto a la renta ${year} fácilmente con Ayayay Impuestos. Descubre cuánto debes pagar y mantente al día con tus declaraciones en el SRI`;
+  return buildMetadata({
+    title,
+    description,
+    locale,
+    path: `/${countryCode}/${year}`
+  });
 };
 
 export default RootLayout;

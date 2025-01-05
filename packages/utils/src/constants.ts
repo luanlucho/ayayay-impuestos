@@ -3,6 +3,7 @@
 export const CONSTANTS = {
   MARKETING_URL: "https://www.ayayayimpuestos.com",
   DASHBOARD_URL: "https://ayayayimpuestos.com",
+  SUPPORTED_COUNTRIES: [{ name: "Ecuador", code: "ec", years: [2024] }],
   ACCOUNT_ID_COOKIE_NAME: "ir:account_id",
   MAX_CONDITIONS: 5,
   MAX_COMPOUNDED_CONDITIONS: 5,
