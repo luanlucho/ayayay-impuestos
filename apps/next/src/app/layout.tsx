@@ -13,6 +13,12 @@ const RootLayout = async (props: Props) => {
   return (
     // suppressHydrationWarning needed for theme provider to not console error
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
+        />
+      </head>
       <body className="bg-background">
         <Providers>{children}</Providers>
       </body>

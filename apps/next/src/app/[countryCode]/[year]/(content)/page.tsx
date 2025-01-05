@@ -21,7 +21,7 @@ const HomePage = async (props: Props) => {
           </p>
           <div className="my-8 flex items-center justify-center rounded-lg bg-neutral-200 p-12 md:p-32 dark:bg-neutral-800">
             <Link
-              href={`/${countryCode}/${year}/calculadora-impuesto-a-la-renta`}
+              href={`/${countryCode}/${year}/t/calculadora-impuesto-a-la-renta`}
             >
               <Button className="dark:bg-primary dark:hover:bg-primary/80 h-auto px-4 py-2 text-lg md:px-8 md:py-4 md:text-xl dark:text-black">
                 Click aquí para calcular

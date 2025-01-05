@@ -20,11 +20,13 @@ const CountrySelect = (props: Props) => {
     <Select onValueChange={changeHandler} value={value} disabled={disabled}>
       <SelectTrigger
         className={twMerge(
-          "CountrySelect h-6 w-max min-w-20 border-none px-2 py-0.5 text-xs md:min-w-24 md:text-base",
+          "CountrySelect flex h-6 w-max min-w-[60px] items-center gap-1 border-none px-2 py-0.5 text-base",
           className
         )}
       >
-        <SelectValue {...rest} />
+        <SelectValue {...rest}>
+          <span className={`fi fi-${value}`} />
+        </SelectValue>
       </SelectTrigger>
       <SelectContent
         className={twMerge("FormSelectContent max-h-[300px]", contentClassName)}
@@ -33,7 +35,10 @@ const CountrySelect = (props: Props) => {
           const { label, value } = period;
           return (
             <FormSelect.Item key={value} value={value}>
-              <span>{capitalize(label)}</span>
+              <span className="flex items-center gap-2">
+                {capitalize(label)}
+                <span className={`fi fi-${value}`} />
+              </span>
             </FormSelect.Item>
           );
         })}

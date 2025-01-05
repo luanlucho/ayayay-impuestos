@@ -15,15 +15,15 @@ const Logo = (props: Props) => {
           src="/assets/images/logo-white.svg"
           alt="Masivo logo"
           width={120}
-          height={100}
-          className="hidden dark:block"
+          height={40}
+          className="hidden h-10 w-[120px] dark:block"
         />
         <Image
           src="/assets/images/logo-black.svg"
           alt="Masivo logo"
           width={120}
-          height={100}
-          className="block dark:hidden"
+          height={40}
+          className="block h-10 w-[120px] dark:hidden"
         />
       </div>
     </Link>

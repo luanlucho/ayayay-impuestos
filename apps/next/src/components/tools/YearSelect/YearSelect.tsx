@@ -31,7 +31,7 @@ const YearSelect = (props: Props) => {
     <Select onValueChange={changeHandler} value={value} disabled={disabled}>
       <SelectTrigger
         className={twMerge(
-          "YearSelect h-6 w-max min-w-16 border-none px-2 py-0.5 text-xs md:min-w-[72px] md:text-base",
+          "YearSelect flex h-6 w-max min-w-16 items-center gap-1 border-none px-2 py-0.5 text-base md:min-w-[72px]",
           className
         )}
       >

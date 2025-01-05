@@ -37,7 +37,7 @@ export const generateMetadata = async (
     title,
     description,
     locale,
-    path: `/${countryCode}/${year}/calculadora-impuesto-a-la-renta`,
+    path: `/${countryCode}/${year}/t/calculadora-impuesto-a-la-renta`,
     openGraph: { images: parentOGImages },
     twitterCard: { images: parentTweeterImages }
   });

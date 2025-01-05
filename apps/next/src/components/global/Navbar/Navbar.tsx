@@ -33,14 +33,14 @@ const Navbar = (props: Props) => {
 
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-1">
-            <CountrySelect
-              value={countryCode}
-              onValueChange={changeCountryHandler}
-            />
             <YearSelect
               value={year}
               onValueChange={changeYearHandler}
               countryCode={countryCode}
+            />
+            <CountrySelect
+              value={countryCode}
+              onValueChange={changeCountryHandler}
             />
           </div>
           <ThemeToggle />

@@ -8,7 +8,7 @@ const baseRoutes = [
     lastModified: new Date().toISOString()
   },
   {
-    url: `${CONSTANTS.MARKETING_URL}/2024/calculadora-impuesto-a-la-renta`,
+    url: `${CONSTANTS.MARKETING_URL}/ec/2024/t/calculadora-impuesto-a-la-renta`,
     lastModified: new Date().toISOString()
   }
 ];
