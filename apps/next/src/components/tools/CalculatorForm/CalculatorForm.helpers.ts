@@ -4,10 +4,10 @@ import invariant from "invariant";
 
 import { Params2024 } from "./CalculatorForm.types";
 import { ResultItem } from "../CalculatorResult/CalculatorResult.types";
-import { tableGeneral2024 } from "./data/2024/general";
-import { tableRIMPEEmprendedor2024 } from "./data/2024/rimpe-emprendedor";
-import { tableRIMPEPopular2024 } from "./data/2024/rimpe-popular";
-import { basicBaskets } from "./data/basicBasket";
+import { table as tableGeneral2024 } from "data/ec/2024/general";
+import { table as tableRIMPEEmprendedor2024 } from "data/ec/2024/rimpe-emprendedor";
+import { table as tableRIMPEPopular2024 } from "data/ec/2024/rimpe-popular";
+import { basicBaskets } from "data/ec/basicBasket";
 import { vCalculator } from "validations/calculator.validations";
 
 export const schema = vCalculator.form();

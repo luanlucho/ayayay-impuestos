@@ -1,3 +1,4 @@
+"use client";
 import { useReactTable, flexRender } from "@tanstack/react-table";
 import { getCoreRowModel as getCoreRowModelFn } from "@tanstack/react-table";
 import { useVirtualizer } from "@tanstack/react-virtual";
@@ -10,6 +11,7 @@ import MessageBoundary from "../MessageBoundary/MessageBoundary";
 import Pagination from "../Pagination/Pagination";
 import TableFilters from "./actions/TableFilters/TableFilters";
 import TableRowActions from "./columns/TableRowActions/TableRowActions";
+import TableRowCurrency from "./columns/TableRowCurrency/TableRowCurrency";
 import TableRowDate from "./columns/TableRowDate/TableRowDate";
 import TableRowStatus from "./columns/TableRowStatus/TableRowStatus";
 import { Button } from "ui/button";
@@ -65,15 +67,21 @@ const Table = <TData, TValue>(props: Props<TData, TValue>) => {
         )}
       >
         <TableRoot
-          wrapperClassName="overflow-hidden"
+          wrapperClassName="overflow-y-hidden"
           wrapperStyle={rows.length ? { height: tableHeight } : undefined}
         >
           <TableHeader>
             {table.getHeaderGroups().map(headerGroup => (
-              <TableRow key={headerGroup.id}>
+              <TableRow
+                key={headerGroup.id}
+                className="bg-primary hover:bg-primary"
+              >
                 {headerGroup.headers.map(header => {
                   return (
-                    <TableHead key={header.id}>
+                    <TableHead
+                      key={header.id}
+                      className="text-xs font-semibold text-black md:text-base"
+                    >
                       {header.isPlaceholder
                         ? null
                         : flexRender(
@@ -146,6 +154,7 @@ const Table = <TData, TValue>(props: Props<TData, TValue>) => {
 
 Table.RowActions = TableRowActions;
 Table.RowDate = TableRowDate;
+Table.RowCurrency = TableRowCurrency;
 Table.RowStatus = TableRowStatus;
 
 export default Table;

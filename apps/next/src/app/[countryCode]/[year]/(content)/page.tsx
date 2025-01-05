@@ -45,6 +45,29 @@ const HomePage = async (props: Props) => {
               description="Nuestros cálculos son precisos y confiables"
             />
           </div>
+          <div className="p flex flex-col gap-4 rounded-xl border px-8 py-12">
+            <h3 className="h3">Más recursos</h3>
+            <ul className="flex flex-col gap-2">
+              <li className="ml-4 list-disc">
+                <Link
+                  href={`/${countryCode}/${year}/t/calculadora-impuesto-a-la-renta`}
+                >
+                  <span className="active:text-primary hover:underline">
+                    Calculadora del impuesto a la renta 2024 por régimen
+                  </span>
+                </Link>
+              </li>
+              <li className="ml-4 list-disc">
+                <Link
+                  href={`/${countryCode}/${year}/i/tabla-impuesto-a-la-renta`}
+                >
+                  <span className="active:text-primary hover:underline">
+                    Tabla de impuestos a la renta 2024 por régimen
+                  </span>
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>

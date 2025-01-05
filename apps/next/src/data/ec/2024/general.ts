@@ -1,6 +1,6 @@
-import { TableRow } from "../../CalculatorForm.types";
+import { TableRow } from "data/data.types";
 
-export const tableGeneral2024: TableRow[] = [
+export const table: TableRow[] = [
   {
     start: 0,
     end: 12_081,
