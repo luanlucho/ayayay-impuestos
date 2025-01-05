@@ -54,3 +54,21 @@ export const formatNumber = (
   const toParts = () => formatter.formatToParts(number);
   return { toValue, toParts };
 };
+
+export const getScrollableParent = (element: HTMLElement) => {
+  let parent = element.parentElement;
+
+  while (parent) {
+    const style = window.getComputedStyle(parent);
+    const overflowY = style.overflowY;
+    if (
+      /(auto|scroll)/.test(overflowY) &&
+      parent.scrollHeight > parent.clientHeight
+    ) {
+      return parent;
+    }
+    parent = parent.parentElement;
+  }
+
+  return document.documentElement; // Default to `html` if no scrollable parent is found
+};

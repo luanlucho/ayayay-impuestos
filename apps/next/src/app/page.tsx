@@ -14,7 +14,7 @@ const HomePage = async (props: Props) => {
     <div className="HomePage grid h-full grid-cols-1 grid-rows-[auto,1fr,auto] flex-col overflow-auto">
       <Navbar className="" />
       <div className="layout">
-        <div className="layout-content py-8">
+        <div className="layout-content md:py-8">
           <PageHeader title="Consulta gratis tu impuesto a la renta del 2024 en Ecuador" />
           <p className="text-lg">
             Calcula tus impuestos de forma rápida y sencilla. Esta es la forma
