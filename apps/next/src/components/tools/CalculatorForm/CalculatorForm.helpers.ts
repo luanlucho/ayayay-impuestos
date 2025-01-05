@@ -111,7 +111,7 @@ const calc2024General = (params: Params2024): ResultItem[] => {
     { label: "Cargas familiares", value: `${dependents}` },
     {
       label: "Rebaja",
-      value: rebaja,
+      value: -rebaja,
       description: `Menor entre 18% de gastos personales y 18% de (${basicBaskets}) canastas básica`,
       options: { style: "secondary" }
     },
@@ -146,6 +146,7 @@ const calc2024RIMPEEmprendedor = (params: Params2024): ResultItem[] => {
     {
       label: "Tarifa del excedente",
       value: fare.toNumber(),
+      description: `Excedente (${surplus}) * Tipo marginal (${row.rate})`,
       options: { style: "secondary" }
     },
     { label: "Impuesto a la Renta", value: ir, options: { style: "primary" } }

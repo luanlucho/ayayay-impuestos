@@ -18,7 +18,6 @@ import useScrollToError from "hooks/useScrollToError";
 import { Button } from "ui/button";
 import { Form } from "ui/form";
 import { Separator } from "ui/separator";
-import { getScrollableParent } from "utils/common.utils";
 import { formatNumber, unformatNumber } from "utils/common.utils";
 
 const CalculatorForm = (props: Props) => {
@@ -88,11 +87,7 @@ const CalculatorForm = (props: Props) => {
     flushSync(() => setResult(result));
     const element = document.getElementById("result");
     if (!element) return;
-    const parent = getScrollableParent(element);
-    const parentRect = parent.getBoundingClientRect();
-    const top = parent.scrollHeight - parentRect.height;
-    // Super hacky, no copiar
-    parent.scrollTo({ top, behavior: "smooth" });
+    element.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

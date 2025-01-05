@@ -16,7 +16,7 @@ const DashboardLayout = async (props: Props) => {
     <Hydrate state={dehydratedState}>
       <div className="DashboardLayout grid h-full w-full grid-cols-[1fr] grid-rows-[max-content,1fr]">
         <Navbar className="col-span-2" />
-        <main className="overflow-hidden">{children}</main>
+        <main>{children}</main>
         <Footer className="col-span-2" />
       </div>
     </Hydrate>

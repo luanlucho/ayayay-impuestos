@@ -14,8 +14,9 @@ const ThemeToggle = (props: Props) => {
   useEffect(() => setMounted(true), []);
 
   const renderIcon = () => {
-    if (!mounted) return <Moon />;
-    return resolvedTheme === "dark" ? <Moon /> : <Sun />;
+    const props = { width: 20, height: 20 };
+    if (!mounted) return <Moon {...props} />;
+    return resolvedTheme === "dark" ? <Moon {...props} /> : <Sun {...props} />;
   };
 
   return (

@@ -34,7 +34,9 @@ const CalculatorResult = (props: Props) => {
                   className={twMerge(
                     "text-muted-foreground",
                     isSecondary ? "text-foreground" : "",
-                    isPrimary ? "text-foreground dark:text-primary" : ""
+                    isPrimary
+                      ? "text-foreground dark:text-primary !text-xs uppercase"
+                      : ""
                   )}
                 >
                   {label}
