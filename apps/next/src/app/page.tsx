@@ -20,9 +20,9 @@ const HomePage = async (props: Props) => {
             Calcula tus impuestos de forma rápida y sencilla. Esta es la forma
             más fácil de calcular tus impuestos en Ecuador.
           </p>
-          <div className="my-8 flex items-center justify-center rounded-lg bg-neutral-200 p-12 md:p-32">
+          <div className="my-8 flex items-center justify-center rounded-lg bg-neutral-200 p-12 md:p-32 dark:bg-neutral-800">
             <Link href="/2024/calculadora-impuesto-a-la-renta">
-              <Button className="h-auto px-4 py-2 text-lg md:px-8 md:py-4 md:text-xl">
+              <Button className="dark:bg-primary dark:hover:bg-primary/80 h-auto px-4 py-2 text-lg md:px-8 md:py-4 md:text-xl dark:text-black">
                 Click aquí para calcular
               </Button>
             </Link>
