@@ -16,7 +16,6 @@ export const getDomainURL = (path: string) => {
     process?.env?.NEXT_PUBLIC_VERCEL_URL ?? // Automatically set by Vercel.
     "http://localhost:3000";
   const isVercelProd = process?.env?.NEXT_PUBLIC_VERCEL_ENV === "production";
-  // @ts-expect-error
   if (isVercelProd) url = process?.env?.NEXT_PUBLIC_APP_URL;
   // Make sure to include `https://` when not localhost.
   url = url.includes("http") ? url : `https://${url}`;
