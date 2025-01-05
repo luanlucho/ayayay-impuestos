@@ -12,7 +12,7 @@ const RootLayout = async (props: Props) => {
 
   return (
     // suppressHydrationWarning needed for theme provider to not console error
-    <html lang="en" suppressHydrationWarning>
+    <html lang="es" suppressHydrationWarning>
       <head>
         <link
           rel="stylesheet"
