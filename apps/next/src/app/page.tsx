@@ -15,7 +15,7 @@ const HomePage = async (props: Props) => {
       <Navbar className="" />
       <div className="layout">
         <div className="layout-content py-8">
-          <PageHeader title="Calcula tus impuestos ecuatorianos gratis" />
+          <PageHeader title="Consulta gratis tu impuesto a la renta del 2024 en Ecuador" />
           <p className="text-lg">
             Calcula tus impuestos de forma rápida y sencilla. Esta es la forma
             más fácil de calcular tus impuestos en Ecuador.

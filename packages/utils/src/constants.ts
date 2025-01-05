@@ -1,7 +1,8 @@
 // Project constants
 
 export const CONSTANTS = {
-  DASHBOARD_URL: "https://app.ir.com",
+  MARKETING_URL: "https://www.ayayayimpuestos.com",
+  DASHBOARD_URL: "https://ayayayimpuestos.com",
   ACCOUNT_ID_COOKIE_NAME: "ir:account_id",
   MAX_CONDITIONS: 5,
   MAX_COMPOUNDED_CONDITIONS: 5,
