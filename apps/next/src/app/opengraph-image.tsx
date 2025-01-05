@@ -27,14 +27,15 @@ export default async function Image() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          flexDirection: "column",
           background: "#facc15"
         }}
       >
         <img
           src="https://res.cloudinary.com/dr8sgdcgz/image/upload/v1736037621/ayayay-impuestos/n7eqhahp4t4v1um17dyl.svg"
           alt={alt}
-          width={960}
-          height={600}
+          width={1000}
+          height={340}
         />
       </div>
     ),
