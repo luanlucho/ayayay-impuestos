@@ -23,7 +23,7 @@ export const Wrapper: React.FC<WrapperProps> = props => {
   const { children, form } = props;
   const formMethods = useForm(form);
   return (
-    <Providers cookies={[]}>
+    <Providers>
       <FormProvider {...formMethods}>{children}</FormProvider>
     </Providers>
   );

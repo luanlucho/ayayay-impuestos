@@ -2,6 +2,9 @@ import analyzer from "@next/bundle-analyzer";
 import { NextConfig } from "next";
 
 const config: NextConfig = {
+  devIndicators: {
+    appIsrStatus: true
+  },
   images: {
     remotePatterns: [
       {

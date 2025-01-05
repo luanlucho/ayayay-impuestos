@@ -2,7 +2,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { httpBatchLink } from "@trpc/client";
-import { CookiesProvider } from "next-client-cookies";
 import { ThemeProvider } from "next-themes";
 import React, { useState } from "react";
 
@@ -14,7 +13,7 @@ import { TooltipProvider } from "ui/tooltip";
 import { getDomainURL } from "utils/common.utils";
 
 const Providers: React.FC<Props> = props => {
-  const { children, cookies } = props;
+  const { children } = props;
   const [queryClient] = useState(() => new QueryClient(queryClientConfig));
   const [trpcClient] = useState(() => {
     return trpc.createClient({
@@ -25,14 +24,12 @@ const Providers: React.FC<Props> = props => {
   return (
     <trpc.Provider client={trpcClient} queryClient={queryClient}>
       <QueryClientProvider client={queryClient}>
-        <CookiesProvider value={cookies}>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            <TooltipProvider>
-              {children}
-              <Toaster />
-            </TooltipProvider>
-          </ThemeProvider>
-        </CookiesProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <TooltipProvider>
+            {children}
+            <Toaster />
+          </TooltipProvider>
+        </ThemeProvider>
         <ReactQueryDevtools />
       </QueryClientProvider>
     </trpc.Provider>

@@ -6,7 +6,7 @@ import { render } from "setupTests";
 describe("Providers", () => {
   it("renders with default props", () => {
     render(
-      <Providers cookies={[]}>
+      <Providers>
         <div />
       </Providers>
     );
