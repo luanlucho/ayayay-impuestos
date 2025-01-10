@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${CONSTANTS.MARKETING_URL}/favicon.ico`,
-      lastModified: "2024-01-04"
+      lastModified: "2024-01-09"
     },
     ...baseRoutes
   ];
