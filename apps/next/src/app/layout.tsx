@@ -1,5 +1,6 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Metadata } from "next";
+import Script from "next/script";
 
 import { MetadataProps, RootLayoutProps as Props } from "./types";
 import Providers from "components/global/Providers/Providers";
@@ -14,6 +15,11 @@ const RootLayout = async (props: Props) => {
     // suppressHydrationWarning needed for theme provider to not console error
     <html lang="es" suppressHydrationWarning>
       <head>
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="Z2zoQACYbcIVVFshsCoc4w"
+          async
+        />
         <link
           rel="stylesheet"
           href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.2.3/css/flag-icons.min.css"
