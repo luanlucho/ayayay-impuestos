@@ -4,7 +4,7 @@ import CONSTANTS from "config/constants";
 
 const baseRoutes = [
   {
-    url: `${CONSTANTS.MARKETING_URL}/`,
+    url: `${CONSTANTS.MARKETING_URL}/ec/2024`,
     lastModified: new Date().toISOString()
   },
   {
