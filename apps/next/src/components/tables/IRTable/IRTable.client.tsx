@@ -10,15 +10,12 @@ const IRTableClient = (props: Props) => {
   const { className, data } = props;
 
   return (
-    <>
-      <button onClick={() => window.print()}>Test</button>
-      <Table
-        className={twMerge("IRTable", className)}
-        columns={columns}
-        data={data}
-        status="success"
-      />
-    </>
+    <Table
+      className={twMerge("IRTable", className)}
+      columns={columns}
+      data={data}
+      status="success"
+    />
   );
 };
 
