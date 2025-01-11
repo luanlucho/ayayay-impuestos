@@ -96,7 +96,7 @@ const CalculatorForm = (props: Props) => {
         noValidate
         id="form-calculator"
         className={twMerge(
-          "CalculatorForm flex max-w-[720px] flex-col gap-2 md:gap-4 [&_*]:text-base",
+          "CalculatorForm flex max-w-[720px] flex-col gap-2 rounded-lg bg-neutral-100 p-8 md:gap-4 dark:bg-neutral-900 [&_*]:text-base",
           className
         )}
         onSubmit={handleSubmit(submitHandler, console.error)}
