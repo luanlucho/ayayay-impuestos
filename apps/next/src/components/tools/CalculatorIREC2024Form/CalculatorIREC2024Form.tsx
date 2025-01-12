@@ -5,11 +5,12 @@ import { flushSync } from "react-dom";
 import { SubmitHandler, useForm, useWatch } from "react-hook-form";
 import { twMerge } from "tailwind-merge";
 
-import { calc, defaultValues, schema } from "./CalculatorForm.helpers";
-import { formatter } from "./CalculatorForm.helpers";
-import { CalculatorFormProps as Props, Schema } from "./CalculatorForm.types";
-import CalculatorResult from "../CalculatorResult/CalculatorResult";
-import { ResultItem } from "../CalculatorResult/CalculatorResult.types";
+import { calc, defaultValues, schema } from "./CalculatorIREC2024Form.helpers";
+import { formatter } from "./CalculatorIREC2024Form.helpers";
+import { CalculatorIREC2024FormProps as Props } from "./CalculatorIREC2024Form.types";
+import { Schema } from "./CalculatorIREC2024Form.types";
+import CalculatorResult from "./CalculatorResult/CalculatorResult";
+import { ResultItem } from "./CalculatorResult/CalculatorResult.types";
 import FormDependentsSelect from "../FormDependentsSelect/FormDependentsSelect";
 import FormRegimeSelect from "../FormRegimeSelect/FormRegimeSelect";
 import FormCurrencyInput from "components/form/FormCurrencyInput/FormCurrencyInput";
@@ -20,7 +21,7 @@ import { Form } from "ui/form";
 import { Separator } from "ui/separator";
 import { formatNumber, unformatNumber } from "utils/common.utils";
 
-const CalculatorForm = (props: Props) => {
+const CalculatorIREC2024Form = (props: Props) => {
   const { className } = props;
   const [result, setResult] = useState<ResultItem[]>([]);
   const form = useForm<Schema>({
@@ -96,7 +97,7 @@ const CalculatorForm = (props: Props) => {
         noValidate
         id="form-calculator"
         className={twMerge(
-          "CalculatorForm flex max-w-[720px] flex-col gap-2 rounded-lg bg-neutral-100 p-2 sm:p-8 md:gap-4 dark:bg-neutral-900 [&_*]:text-base",
+          "CalculatorIREC2024Form flex max-w-[720px] flex-col gap-2 rounded-lg bg-neutral-100 p-4 sm:p-8 md:gap-4 dark:bg-neutral-900 [&_*]:text-base",
           className
         )}
         onSubmit={handleSubmit(submitHandler, console.error)}
@@ -180,4 +181,4 @@ const CalculatorForm = (props: Props) => {
   );
 };
 
-export default CalculatorForm;
+export default CalculatorIREC2024Form;

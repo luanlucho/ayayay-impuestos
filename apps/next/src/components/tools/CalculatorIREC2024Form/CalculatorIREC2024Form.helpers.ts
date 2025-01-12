@@ -1,9 +1,9 @@
-// CalculatorForm helper functions and data
+// CalculatorIREC2024Form helper functions and data
 import { Big } from "big.js";
 import invariant from "invariant";
 
-import { Params2024 } from "./CalculatorForm.types";
-import { ResultItem } from "../CalculatorResult/CalculatorResult.types";
+import { Params2024 } from "./CalculatorIREC2024Form.types";
+import { ResultItem } from "./CalculatorResult/CalculatorResult.types";
 import { table as tableGeneral2024 } from "data/ec/2024/general";
 import { table as tableRIMPEEmprendedor2024 } from "data/ec/2024/rimpe-emprendedor";
 import { table as tableRIMPEPopular2024 } from "data/ec/2024/rimpe-popular";

@@ -5,7 +5,7 @@ import React from "react";
 
 import { MetadataProps, PageProps as Props } from "app/types";
 import PageHeader from "components/global/PageHeader/PageHeader";
-import CalculatorForm from "components/tools/CalculatorForm/CalculatorForm";
+import CalculatorForm from "components/tools/CalculatorIREC2024Form/CalculatorIREC2024Form";
 import { buildMetadata } from "utils/seo.utils";
 
 const Page = async (props: Props) => {
@@ -22,7 +22,7 @@ const Page = async (props: Props) => {
         <div className="flex flex-col justify-between gap-4 lg:flex-row lg:gap-8">
           <CalculatorForm className="flex-1" />
           <aside className="flex gap-4">
-            <div className="flex h-[calc(100vh-300px)] flex-1 flex-col gap-4 rounded-xl border px-8 py-12">
+            <div className="flex h-[calc(100vh-300px)] flex-1 flex-col gap-4 rounded-xl border p-4 sm:px-8 sm:py-12">
               <h3 className="h3">Más recursos</h3>
               <ul className="flex flex-col gap-2">
                 <li className="ml-4 list-disc">
