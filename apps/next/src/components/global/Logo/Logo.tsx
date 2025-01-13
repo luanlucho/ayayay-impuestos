@@ -44,10 +44,10 @@ const Logo = (props: Props) => {
         {triggerNode}
       </DropdownMenuTrigger>
       <DropdownMenuContent>
-        <DropdownMenuItem>
+        <DropdownMenuItem asChild>
           <Link href="/">Inicio</Link>
         </DropdownMenuItem>
-        <DropdownMenuItem>
+        <DropdownMenuItem asChild>
           <a href="https://codepen.io/luanlucho/pen/qEWxwLo" target="_blank">
             Manual de marca
           </a>

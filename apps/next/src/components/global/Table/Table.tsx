@@ -102,6 +102,12 @@ const Table = <TData, TValue>(props: Props<TData, TValue>) => {
                   <TableRow
                     key={row.id}
                     data-state={row.getIsSelected() && "selected"}
+                    className={twMerge(
+                      // @ts-expect-error - `highlighted` is not in the type
+                      row.original.highlighted
+                        ? "ring-primary text-foreground relative z-10 ring-2 ring-inset"
+                        : ""
+                    )}
                     style={{
                       height: `${virtualRow.size}px`,
                       transform: `translateY(${

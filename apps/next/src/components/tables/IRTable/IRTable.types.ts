@@ -1,6 +1,6 @@
 // IRTable types and interfaces
 
-import { TableRow } from "data/data.types";
+import { IRTableRow } from "data/data.types";
 
 // Component Props
 export interface IRTableProps {
@@ -12,5 +12,5 @@ export interface IRTableProps {
 
 export interface IRTableClientProps {
   className?: string;
-  data: TableRow[];
+  data: IRTableRow[];
 }

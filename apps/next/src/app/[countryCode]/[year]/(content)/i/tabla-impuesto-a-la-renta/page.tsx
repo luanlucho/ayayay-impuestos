@@ -10,6 +10,8 @@ import { buildMetadata } from "utils/seo.utils";
 
 const TableIRPage = async (props: Props) => {
   const { countryCode, year } = await props.params;
+  const absoluteYear = +year - 1;
+
   return (
     <div className="TableIRPage grid h-full grid-cols-1 grid-rows-[auto,1fr,auto] flex-col overflow-auto">
       <div className="layout">
@@ -44,7 +46,7 @@ const TableIRPage = async (props: Props) => {
             </p>
             <IRTable
               countryCode={countryCode}
-              year={+year}
+              year={absoluteYear}
               filename="rimpe-popular"
             />
           </div>
@@ -56,7 +58,7 @@ const TableIRPage = async (props: Props) => {
             </p>
             <IRTable
               countryCode={countryCode}
-              year={+year}
+              year={absoluteYear}
               filename="rimpe-emprendedor"
             />
           </div>
@@ -68,7 +70,7 @@ const TableIRPage = async (props: Props) => {
             </p>
             <IRTable
               countryCode={countryCode}
-              year={+year}
+              year={absoluteYear}
               filename="general"
             />
           </div>

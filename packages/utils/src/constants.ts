@@ -3,7 +3,7 @@
 export const CONSTANTS = {
   MARKETING_URL: "https://www.ayayayimpuestos.com",
   DASHBOARD_URL: "https://ayayayimpuestos.com",
-  SUPPORTED_COUNTRIES: [{ name: "Ecuador", code: "ec", years: [2024] }],
+  SUPPORTED_COUNTRIES: [{ name: "Ecuador", code: "ec", years: [2025] }],
   ACCOUNT_ID_COOKIE_NAME: "ir:account_id",
   MAX_CONDITIONS: 5,
   MAX_COMPOUNDED_CONDITIONS: 5,
@@ -20,7 +20,10 @@ export const CONSTANTS = {
   // 1 Billion - 1
   MAX_NUMBER: 999_999_999,
   MAX_INT2: 32_767,
+  MONTH_DAY_FORMAT: "DD [de] MMMM",
+  MONTH_DAY_LONG_FORMAT: "dddd, DD [de] MMMM",
   DATE_FORMAT: "YYYY-MM-DD",
+  DATE_LONG_FORMAT: "MMM DD YYYY",
   DATE_TIME_FORMAT: "MMM DD YYYY - HH:mm:ss",
   DATE_TIME_LOG_FORMAT: "YYYY MMM DD - HH:mm:ss",
   DATE_TIME_LOG_SHORT_FORMAT: "MMM DD - HH:mm:ss",

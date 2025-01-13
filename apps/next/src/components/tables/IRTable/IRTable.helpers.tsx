@@ -3,9 +3,9 @@ import { ColumnDef } from "@tanstack/react-table";
 import Big from "big.js";
 
 import Table from "components/global/Table/Table";
-import { TableRow } from "data/data.types";
+import { IRTableRow } from "data/data.types";
 
-export const columns: ColumnDef<TableRow>[] = [
+export const columns: ColumnDef<IRTableRow>[] = [
   {
     accessorKey: "start",
     header: "Limite inferior",

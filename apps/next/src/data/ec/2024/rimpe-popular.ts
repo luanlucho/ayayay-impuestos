@@ -1,6 +1,6 @@
-import { TableRow } from "data/data.types";
+import { IRTableRow } from "data/data.types";
 
-export const table: TableRow[] = [
+export const table: IRTableRow[] = [
   {
     start: 0,
     end: 2_500,
